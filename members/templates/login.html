@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body
+    {
+        background-image: url("https://i.pinimg.com/736x/c6/7c/c1/c67cc114fc289a3eacc442da873053b2.jpg");
+        background-repeat: no-repeat;
+     
+        background-size: cover;
+        image-rendering: optimizeQuality;
+    }
+
+    .container-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      border: 2px solid #ced4da;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+    }
+
+    h2 {
+      color: #007bff;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+  </style>
+  <title>Login Page</title>
+</head>
+<body>
+
+<div class="container-wrapper">
+  <div class="login-container">
+    <h2 class="mb-4">Login</h2>
+    <form id="otp-form" action="welcome" method="POST">
+      {% csrf_token %}
+      <div class="messages">
+        
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="name" required name="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="pass" required name="password">
+      </div>
+     
+      <button type="submit" class="btn btn-success">Login</button>
+    </form>
+    <p class="mt-3">Don't have an account? <a href="signup">Sign up</a></p>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
